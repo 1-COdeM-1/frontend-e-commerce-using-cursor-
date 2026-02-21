@@ -1,0 +1,27 @@
+.page { padding: 2rem 1.5rem 4rem; }
+.wrap { max-width: 1000px; margin: 0 auto; }
+.backBtn { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+.backBtn:hover { color: var(--accent); }
+.notFound { color: var(--text-muted); margin-bottom: 1rem; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.gallery { position: sticky; top: 100px; }
+.mainImage { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+.details { display: flex; flex-direction: column; gap: 1.25rem; }
+.name { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; }
+.price { font-size: 1.5rem; font-weight: 600; color: var(--accent); }
+.desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+.field { display: flex; flex-direction: column; gap: 0.5rem; }
+.label { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); }
+.sizeGrid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.sizeBtn, .sizeActive { min-width: 48px; padding: 0.6rem 0.75rem; font-size: 0.9rem; font-weight: 500; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-card); color: var(--text); }
+.sizeActive { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.quantityWrap { display: flex; width: fit-content; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.qtyBtn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--text); background: var(--bg-card); }
+.qtyValue { min-width: 44px; text-align: center; font-weight: 600; }
+.loginHint { font-size: 0.9rem; color: var(--text-muted); }
+.addBtn { padding: 1rem 1.5rem; font-size: 1rem; font-weight: 600; letter-spacing: 0.05em; color: var(--bg); background: var(--accent); border-radius: var(--radius); transition: background var(--transition), transform var(--transition); }
+.addBtn:hover { background: var(--accent-dim); transform: translateY(-1px); }
+.addBtnAdded { padding: 1rem 1.5rem; font-size: 1rem; font-weight: 600; color: var(--bg); background: var(--success); border-radius: var(--radius); cursor: default; }
+.cartLink { font-size: 0.9rem; color: var(--accent); align-self: flex-start; }
+.cartLink:hover { color: var(--text); }
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .gallery { position: static; } }

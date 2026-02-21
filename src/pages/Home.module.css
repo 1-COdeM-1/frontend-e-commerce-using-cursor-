@@ -1,0 +1,24 @@
+.page { min-height: 100%; }
+.hero { max-width: 1280px; margin: 0 auto; padding: 3rem 1.5rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.heroContent { display: flex; flex-direction: column; gap: 1.25rem; }
+.heroLabel { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+.heroTitle { font-family: var(--font-heading); font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+.accent { color: var(--accent); font-style: italic; }
+.heroSub { font-size: 1.1rem; color: var(--text-muted); max-width: 400px; }
+.heroCta { display: inline-flex; padding: 0.9rem 1.75rem; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.05em; color: var(--bg); background: var(--accent); border-radius: var(--radius); width: fit-content; transition: background var(--transition), transform var(--transition); }
+.heroCta:hover { background: var(--accent-dim); transform: translateY(-1px); }
+.heroVisual { position: relative; }
+.heroImageWrap { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/5; border: 1px solid var(--border); }
+.heroImage { width: 100%; height: 100%; object-fit: cover; }
+.section { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+.sectionHead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+.sectionTitle { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; }
+.sectionLink { font-weight: 600; font-size: 0.9rem; color: var(--accent); }
+.sectionLink:hover { color: var(--text); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+.cta { background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 1.5rem; }
+.ctaInner { max-width: 600px; margin: 0 auto; text-align: center; }
+.ctaTitle { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem; }
+.ctaBtn { display: inline-flex; padding: 0.75rem 1.5rem; font-weight: 600; color: var(--accent); border: 2px solid var(--accent); border-radius: var(--radius); }
+.ctaBtn:hover { background: var(--accent); color: var(--bg); }
+@media (max-width: 768px) { .hero { grid-template-columns: 1fr; padding: 2rem 1.5rem 3rem; } .heroVisual { order: -1; } .grid { grid-template-columns: repeat(2, 1fr); } }

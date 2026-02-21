@@ -1,0 +1,201 @@
+/* ── Header shell ── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Main row (logo + nav + actions) ── */
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* ── Logo ── */
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+.logo:hover {
+  color: var(--accent);
+}
+
+/* ── Nav links ── */
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+.navLink {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.navLink:hover {
+  color: var(--text);
+}
+.adminLink {
+  font-weight: 500;
+  color: var(--accent);
+}
+.adminLink:hover {
+  color: var(--text);
+}
+
+/* ── Desktop actions group ── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.desktopUserActions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* ── Shared element styles ── */
+.userName {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-right: 0.25rem;
+  white-space: nowrap;
+}
+.logoutBtn {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.logoutBtn:hover {
+  background: var(--bg-card);
+  color: var(--text);
+}
+.authLink {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-radius: var(--radius);
+}
+.authLink:hover {
+  color: var(--text);
+}
+.signupBtn {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--accent);
+  border-radius: var(--radius);
+}
+.signupBtn:hover {
+  background: var(--accent-dim);
+}
+.themeBtn {
+  padding: 0.5rem;
+  color: var(--text);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.themeBtn:hover {
+  background: var(--bg-card);
+  color: var(--accent);
+}
+.cartBtn {
+  position: relative;
+  padding: 0.5rem;
+  color: var(--text);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+}
+.cartBtn:hover {
+  background: var(--bg-card);
+  color: var(--accent);
+}
+.cartCount {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--accent);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Mobile top bar (hidden on desktop) ── */
+.mobileTopBar {
+  display: none;
+}
+
+/* ═══════════════════════════════════
+   Mobile: < 600px
+   ═══════════════════════════════════ */
+@media (max-width: 600px) {
+  /* Show the mobile top bar */
+  .mobileTopBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--header-bg);
+  }
+
+  .mobileLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .mobileRight {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  /* Hide the desktop theme btn + cart + user info on mobile when logged in */
+  .desktopTheme {
+    display: none;
+  }
+  .desktopCart {
+    display: none;
+  }
+  .desktopUserActions {
+    display: none;
+  }
+
+  /* Tighten the main nav row */
+  .inner {
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+  }
+
+  /* Make the nav link text smaller */
+  .navLink,
+  .adminLink {
+    font-size: 0.875rem;
+  }
+  .nav {
+    gap: 1.25rem;
+  }
+}

@@ -1,0 +1,265 @@
+/* ── Base ── */
+.page {
+  padding: 2rem 1.5rem 4rem;
+}
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.sub {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+/* ── Empty state ── */
+.empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+.empty p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+.shopLink {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ── Two-column layout (desktop) ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  align-items: start;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Cart row (desktop) ── */
+.row {
+  display: grid;
+  grid-template-columns: 80px 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Thumbnail ── */
+.thumbWrap {
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--bg-elevated);
+}
+.thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Item info ── */
+.itemInfo {
+  min-width: 0;
+}
+.itemName {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.itemName:hover {
+  color: var(--accent);
+}
+.itemMeta,
+.itemPrice {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ── Quantity controls ── */
+.qtyWrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.qtyBtn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg-card);
+  cursor: pointer;
+}
+.qtyBtn:hover {
+  background: var(--bg-elevated);
+}
+.qtyValue {
+  min-width: 36px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ── Bottom row: price + remove ── */
+.bottomRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.lineTotal {
+  font-weight: 600;
+  white-space: nowrap;
+}
+.removeBtn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  border-radius: var(--radius);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.removeBtn:hover {
+  color: var(--text);
+  background: var(--bg-card);
+}
+
+/* ── Sidebar / Order summary ── */
+.sidebar {
+  position: sticky;
+  top: 100px;
+}
+.summary {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.shippingNote {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+.checkoutBtn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--bg);
+  background: var(--accent);
+  border-radius: var(--radius);
+  margin-bottom: 0.75rem;
+}
+.checkoutBtn:hover {
+  background: var(--accent-dim);
+}
+.continueLink {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.continueLink:hover {
+  color: var(--accent);
+}
+
+/* ── Tablet (≤ 768px) ── */
+@media (max-width: 768px) {
+  /* Stack sidebar below the list */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .sidebar {
+    position: static;
+  }
+}
+
+/* ── Mobile (≤ 540px) ── */
+@media (max-width: 540px) {
+  .page {
+    padding: 1rem 0.875rem 3rem;
+  }
+
+  /*
+   * Each row: thumbnail on the left (72px fixed),
+   * all other content stacked in rows on the right.
+   *   Row 1 → item name + meta + price
+   *   Row 2 → qty controls
+   *   Row 3 → line total + remove button
+   */
+  .row {
+    grid-template-columns: 72px 1fr;
+    grid-template-areas:
+      "thumb  info"
+      "thumb  qty"
+      "thumb  bottom";
+    column-gap: 0.75rem;
+    row-gap: 0.35rem;
+    padding: 1rem 0;
+  }
+
+  .thumbWrap {
+    grid-area: thumb;
+    align-self: start;
+  }
+  .itemInfo {
+    grid-area: info;
+    align-self: end;
+  }
+  .qtyWrap {
+    grid-area: qty;
+    width: fit-content;
+  }
+  .bottomRow {
+    grid-area: bottom;
+    justify-content: space-between;
+  }
+
+  .qtyBtn {
+    width: 32px;
+    height: 32px;
+  }
+  .qtyValue {
+    min-width: 28px;
+  }
+  .itemName {
+    font-size: 0.9rem;
+  }
+  .lineTotal {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,30 @@
+.widget { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999; }
+.toggle { width: 56px; height: 56px; border-radius: 50%; background: var(--accent); color: var(--bg); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); transition: transform 0.2s, background 0.2s; }
+.toggle:hover { background: var(--accent-dim); transform: scale(1.05); }
+.panel { position: absolute; bottom: calc(56px + 0.75rem); right: 0; width: 380px; max-width: calc(100vw - 2rem); height: 520px; max-height: 70vh; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow); display: flex; flex-direction: column; overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(10px) scale(0.96); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; }
+.widgetOpen .panel { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+.panelHead { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); background: var(--bg-elevated); }
+.botName { font-family: var(--font-heading); font-weight: 600; font-size: 1rem; }
+.messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 1rem; }
+.userWrap, .botWrap { display: flex; align-items: flex-end; gap: 0.5rem; max-width: 100%; }
+.userWrap { flex-direction: row-reverse; }
+.botAvatar, .userAvatar { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; }
+.botAvatar { background: var(--accent); color: var(--bg); }
+.userAvatar { background: var(--border); color: var(--text-muted); }
+.userBubble, .botBubble { max-width: 85%; padding: 0.75rem 1rem; border-radius: 1rem; }
+.botBubble { background: var(--bg-elevated); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+.userBubble { background: var(--accent); color: var(--bg); border-bottom-right-radius: 4px; }
+.msgText { font-size: 0.9rem; line-height: 1.45; }
+.msgText p { margin: 0 0 0.35em 0; }
+.msgText strong { font-weight: 600; }
+.productCards { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.productCard { display: flex; flex-direction: column; width: calc(50% - 0.25rem); min-width: 100px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.productCard:hover { border-color: var(--accent-dim); }
+.productCardImg { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.productCardName { font-size: 0.75rem; font-weight: 500; padding: 0.35rem 0.5rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.productCardPrice { font-size: 0.8rem; font-weight: 600; color: var(--accent); padding: 0 0.5rem 0.5rem; }
+.inputWrap { padding: 0.75rem 1rem; border-top: 1px solid var(--border); background: var(--bg-elevated); display: flex; gap: 0.5rem; }
+.input { flex: 1; padding: 0.65rem 1rem; font-size: 0.9rem; font-family: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); }
+.input:focus { outline: none; border-color: var(--accent); }
+.sendBtn { width: 40px; height: 40px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--bg); background: var(--accent); border-radius: var(--radius); }
+.sendBtn:hover { background: var(--accent-dim); }
